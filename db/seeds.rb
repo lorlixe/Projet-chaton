@@ -10,7 +10,7 @@
 require'faker'
 
 
-1.times do |i|
+5.times do |i|
     user = User.create(
         first_name: Faker::Name.first_name,
         last_name: Faker::Name.last_name,
@@ -36,38 +36,3 @@ product = Product.create(
     category_id: Category.all.sample
     )
 end
-
-5.times do |i|
-    cart = Cart.create(
-       user_id: User.all.sample
-       )
-end
-
-5.times do |i|
-
-    product_cart = ProductCart.create(
-       quantity:5,
-       total_price: 100,
-       cart_id: Cart.all.sample ,
-       product_id: Product.all.sample
-       )
-end
-
-5.times do |i|
-    order = Order.create(
-        user_id: User.all.sample
-    )
-end
-
-5.times do |i|
-    product_order = ProductOrder.create(
-        order_id: Order.all.sample,
-        product_id: Product.all.sample,
-        quantity: 10,
-        total_price: 100
-
-    )
-
-end
-
- 
