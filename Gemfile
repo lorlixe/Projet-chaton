@@ -61,3 +61,4 @@ end
 gem 'devise'
 gem 'faker'
 gem 'table_print'
+gem 'activerecord-reset-pk-sequence'
