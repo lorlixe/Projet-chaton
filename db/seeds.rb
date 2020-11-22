@@ -8,6 +8,15 @@
 
 
 require'faker'
+User.destroy_all
+User.reset_pk_sequence
+
+Category.destroy_all
+Category.reset_pk_sequence
+
+Product.destroy_all
+Product.reset_pk_sequence
+
 
 
 5.times do |i|
