@@ -41,9 +41,9 @@ end
 5.times do |i|
 product = Product.create(
     description: Faker::Lorem.paragraph(sentence_count: 8),
-    price: Faker::Commerce.price,
+    price: rand(1..99),
     name: Faker::Lorem.sentence,
     url: "https//www.chaton.com",
-    category_id: Category.all.sample
+    category_id: rand(1..5)
     )
 end
