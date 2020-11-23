@@ -66,4 +66,6 @@ gem 'table_print'
 gem 'activerecord-reset-pk-sequence'
 gem 'jquery-rails'
 gem 'bootstrap'
+gem 'letter_opener'
+gem 'dotenv-rails', groups: [:development, :test]
 
