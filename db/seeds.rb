@@ -21,7 +21,7 @@ Product.reset_pk_sequence
 
 
 
-5.times do |i|
+10.times do |i|
     user = User.create(
         first_name: Faker::Name.first_name,
         last_name: Faker::Name.last_name,
@@ -30,7 +30,7 @@ Product.reset_pk_sequence
     )
 end
 
-5.times do |i|
+10.times do |i|
     category = Category.create(
         name: Faker::Creature::Cat.name
     )
@@ -38,7 +38,7 @@ end
 end
 
 
-5.times do |i|
+20.times do |i|
 product = Product.create(
     description: Faker::Lorem.paragraph(sentence_count: 8),
     price: rand(1..99),
