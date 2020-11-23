@@ -47,3 +47,4 @@ product = Product.create(
     category_id: rand(1..5)
     )
 end
+
