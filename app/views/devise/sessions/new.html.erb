@@ -1,26 +1,65 @@
-<h2>Log in</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+<body>
+<section class="p-0 d-flex align-items-center">
+  <div class="container-fluid">
+    <div class="row">
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+      <div class="col-12 col-md-5 col-lg-4 d-md-flex align-items-center bg-grad h-sm-100-vh">
+          <div class="w-100 p-3 p-lg-5 all-text-white">
+            <div class="justify-content-center align-self-center">
+              <img class="card-img" src="https://photos-chatons.s3.eu-west-3.amazonaws.com/kittens+resize/Angora+turk/Promo-Facebook-Ad+(Carousel)+(1).jpeg", alt="Card image cap">
+            </div>
+            <ul class="list-group list-group-borderless mt-4">
+              <li class="list-group-item text-white">Connectez-vous </li>
+              <li class="list-group-item text-white">Téléchargez des photos de chatons sur notre site</li>
+              <li class="list-group-item text-white">Et profitez de la vie</li>
+            </ul>
+          </div>
+      </div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+        <div class="col-12 col-md-7 col-xl-8 mx-auto my-5">
+          <div class="row h-100">
+            <div class="col-12 col-md-10 col-lg-5 text-left mx-auto d-flex align-items-center">
+              <div class="w-100">
+                <h2 class="">Connectez-vous maintenant</h2>
+                <h5 class="font-weight-light">pour voir tous nos chatons</h5>
+                <div class="form mt-4 ">
+
+                <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                  <div class="field">
+                    <%= f.label :email; %></br>
+                    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+                  </div>
+                
+                  <div class="field">
+                  <%= f.label :password, "Mot de passe" %></br>
+                  <%= f.password_field :password, autocomplete: "current-password" %>
+                  </div>
+                
+                  <% if devise_mapping.rememberable? %>
+                    <div class="field">
+                      <%= f.check_box :remember_me %>
+                      <%= f.label :remember_me, "se souvenir de moi" %>
+                    </div>
+                  <% end %>
+                
+                  <div class="actions">
+                    <%= f.submit "Connectez-vous", class: "btn btn-primary", style: "width:204px;"%>             
+                  </div>
+                  </div>
+                <% end %>
+                
+                <%= render "devise/shared/links" %>
+                  
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
   </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</section>
+</body>
