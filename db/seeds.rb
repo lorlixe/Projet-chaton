@@ -38,7 +38,7 @@ end
 end
 
 
-5.times do |i|
+20.times do |i|
 product = Product.create(
     description: Faker::Lorem.paragraph(sentence_count: 8),
     price: rand(1..99),
