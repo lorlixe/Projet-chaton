@@ -10,9 +10,18 @@
   </head>
 
   <body>
+
+  <header>
+    <%= render 'layouts/navbar'%>
+  </header>
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
     <%= javascript_include_tag 'application' %>
   </body>
+  <footer>
+    <%= render 'layouts/footer'%>
+  
+  </footer>
 </html>
