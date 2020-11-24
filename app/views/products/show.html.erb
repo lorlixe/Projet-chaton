@@ -1,0 +1,30 @@
+
+
+
+<section class="portfolio pb-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 p-0">
+        <div class="portfolio-wrap grid items-2 items-padding">
+
+          <div class="portfolio-card isotope-item digital">
+            <div class="portfolio-card-body">
+              <div class="portfolio-card-header">
+                <img src="assets/images/portfolio/01.jpg" alt="">
+              </div>
+              <div class="portfolio-card-footer">
+
+
+                <img class="card-img" src="<%=@specific_product.url %>" alt="Card image cap">
+                <h6 class="info-title"><a title=""><%=@specific_product.name %></a></h6>
+                <h6>Price <%=@specific_product.price %>€ </h6>
+                <h6 class="info-title"><a href="#" title=""> Add to the cart </a></h6>
+
+                <p> <%= @specific_product.description %> </p>
+
+
+
+
+              </div>
+            </div>
+          </div>
