@@ -1,2 +1,23 @@
 <h1>Carts#show</h1>
+
+<%@productcart.each do |i|%>
+    <div class="card mx-auto my-4 shadow" style="width: 25rem;">
+        <div class="album py-5 bg-light">
+            <div class="container">
+                <div class="card mb-4 shadow-sm">
+                <img class="card-img" src="<%= i.url %>" alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text"><%= i.name %></p>
+                        <p class="card-text">Price:<%= i.price %></p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <a   <%= link_to "voir plus", product_path(i.id),  :class => "btn btn-primary" %></a>
+                        </div>
+                    </div>    
+                </div>
+            </div>      
+        </div>
+    </div>
+<%end%>
+
 <p>Find me in app/views/carts/show.html.erb</p>

@@ -1,13 +1,23 @@
 class ProductCartController < ApplicationController
+  before_action :authenticate_user
+
   def create
-    @cart = create_cart_for_a_current_user
-    @product = Product.find(params[:product_id])
-    @product_cart = @cart
+    
+
+
   end
 
   def update
+
   end
 
   def destroy
+    @productcart = ProductCart.find(params[:cart_id])
+    if @productcart.destroy
+      flash[:success] = "supprimé"
+      redirect_to user_cart_path(Cart.find_by(user_id: current_user.id))
+    end
   end
+
+
 end
