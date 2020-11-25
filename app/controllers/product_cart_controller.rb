@@ -1,14 +1,13 @@
 class ProductCartController < ApplicationController
-  before_action :authenticate_user
-
+  before_action :authenticate_user!
   def create
     
-
-
-  end
-
-  def update
-
+    @productcart = ProductCart.new(
+      product_id: @product.id,
+      cart_id: @cart.id,
+      total_price: @product.price,
+      quantity: 1
+    )
   end
 
   def destroy

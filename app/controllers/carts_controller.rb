@@ -6,22 +6,21 @@ class CartsController < ApplicationController
   def show
     @cart = Cart.find(params[:id])
     @productcart = ProductCart.all
+
+    @total_price = 0
+    
+    @productcart.each do |productcart|
+      @total_price = productcart.product.price  + @total_price
+    end
   end
 
   private
 
   def only_see_own_page
-      @user = User.find(params[:id])
+      @cart = Cart.find(params[:id])
     
-      if current_user != @user
+      if @cart.user_id != current_user.id
         redirect_to root_path, notice: "Vous n'avez pas accès a cette page."
       end
-  end
-
-
-  def create
-  end
-
-  def destroy 
   end
 end

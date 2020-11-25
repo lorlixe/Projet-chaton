@@ -1,4 +1,3 @@
-require 'open-uri'
 
 class Product < ApplicationRecord
     belongs_to :category, optional: true
@@ -7,8 +6,6 @@ class Product < ApplicationRecord
   
     has_many :product_orders
     has_many :orders, through: :product_orders
-
-	has_one_attached :picture
   
     validates :name, presence: true
     validates :url, presence: true
