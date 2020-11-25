@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
- 
-  get 'contact/index'
-
+  root 'products#index'
   devise_for :users
 	resources :contact, only: [:index]
-
+  resources :products
+  
   resources :product_cart_, only: [:create, :update, :destroy]
   resources :carts, except: [:index, :new, :edit]
-  root 'products#index' 
 end

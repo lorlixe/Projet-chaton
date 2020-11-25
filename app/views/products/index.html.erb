@@ -41,8 +41,9 @@
 										<img class="card-img" src="<%=product.url %>" alt="Card image cap">
 										<h6 class="info-title"><a href="<%=product_path(product.id)%>" title=""><%=product.name %></a></h6>
 										<h6>Prix <%=product.price %>€ </h6>
-										<h6 class="btn btn-primary" href="#">Ajouter au panier</h6>
-
+										<% if user_signed_in? %>
+											<h6 class="btn btn-primary" href="#">Ajouter au panier</h6>
+										<%end%>
 									</div>
 								</div>
 							</div>

@@ -13,7 +13,9 @@
     <div class="card-body">
       
       <a   <%= link_to "Retourner au catalogue", products_path,  :class => "btn btn-primary" %></a>
-      
+      <% if user_signed_in? %>
+					<h6 class="btn btn-primary" href="#">Ajouter au panier</h6>
+			<%end%>
     </div>
   
 </div>

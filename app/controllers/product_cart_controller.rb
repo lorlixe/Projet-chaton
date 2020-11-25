@@ -1,15 +1,16 @@
 class ProductCartController < ApplicationController
   before_action :authenticate_user!
+
+  def new
+  
+  end
+
   def create
     
+  end
 
-    
-    @productcart = ProductCart.new(
-      product_id: @product.id,
-      cart_id: @cart.id,
-      total_price: @product.price,
-      quantity: 1
-    )
+  def show
+    @productcart = ProductCart.all
   end
 
   def destroy
