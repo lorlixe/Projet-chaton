@@ -18,6 +18,8 @@
         <% message = "Mot de passe invalide" %>
         <% elsif message == "Password is too short (minimum is 6 characters)" %>
         <% message = "Votre mot de passe doit contenir au minimum six caractères." %>
+        <% elsif message == "Email has already been taken" %>
+        <% message = "Cette adresse e-mail n'est pas disponible." %>
         <% end %>
         <li><%= message %></li>
       <% end %>

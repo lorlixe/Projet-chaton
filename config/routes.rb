@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   devise_for :users
 	resources :contact, only: [:index]
 	resources :products
-	resources :users, only: [:index]
+	resources :users, only: [:show]
 end
