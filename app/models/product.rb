@@ -1,3 +1,4 @@
+
 class Product < ApplicationRecord
     belongs_to :category
     has_many :product_carts
@@ -6,7 +7,6 @@ class Product < ApplicationRecord
     has_many :product_orders
     has_many :orders, through: :product_orders
 
-	
   
     validates :name, presence: true
     validates :url, presence: true
