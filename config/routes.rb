@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   devise_for :users
   resources :contact, only: [:index]
   resources :users, only: [:show]
+  resources :products
 
 end

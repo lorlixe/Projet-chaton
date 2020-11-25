@@ -22,23 +22,24 @@ Product.reset_pk_sequence
 pictures_array = ["https://photos-chatons.s3.eu-west-3.amazonaws.com/kittens+resize/American+curl/Promo-Facebook-Ad+(Carousel)+(1).jpeg",
     "https://photos-chatons.s3.eu-west-3.amazonaws.com/kittens+resize/American+curl/Promo-Facebook-Ad+(Carousel)+(3).jpeg",
     "https://photos-chatons.s3.eu-west-3.amazonaws.com/kittens+resize/American+curl/Promo-Facebook-Ad+(Carousel).jpeg",
-"https://photos-chatons.s3.eu-west-3.amazonaws.com/kittens+resize/American+curl/Promo-Twitter-Profile+Image+(2).jpeg",
     "https://photos-chatons.s3.eu-west-3.amazonaws.com/kittens+resize/American+shorthair/Promo-Facebook-Ad+(Carousel)+(14).jpeg",
-    "https://photos-chatons.s3.eu-west-3.amazonaws.com/kittens+resize/American+shorthair/Promo-Twitter-Profile+Image+(13).jpeg",
     "https://photos-chatons.s3.eu-west-3.amazonaws.com/kittens+resize/Angora+turk/Promo-Facebook-Ad+(Carousel)+(1).jpeg",
     "https://photos-chatons.s3.eu-west-3.amazonaws.com/kittens+resize/Angora+turk/Promo-Facebook-Ad+(Carousel).jpeg",
-    "https://photos-chatons.s3.eu-west-3.amazonaws.com/kittens+resize/Angora+turk/Promo-Facebook-Ad+(Carousel)+(2).jpeg",
-		"https://photos-chatons.s3.eu-west-3.amazonaws.com/kittens+resize/Balinais/Promo-Facebook-Ad+(Carousel).jpeg",
-    "https://photos-chatons.s3.eu-west-3.amazonaws.com/kittens+resize/Balinais/Promo-Facebook-Ad+(Carousel)+(4).jpeg",
+    "https://photos-chatons.s3.eu-west-3.amazonaws.com/kittens+resize/Balinais/Promo-Facebook-Ad+(Carousel)+(3).jpeg",
     "https://photos-chatons.s3.eu-west-3.amazonaws.com/kittens+resize/Balinais/Promo-Facebook-Ad+(Carousel)+(5).jpeg",
     "https://photos-chatons.s3.eu-west-3.amazonaws.com/kittens+resize/Balinais/Promo-Facebook-Ad+(Carousel)+(2).jpeg",
     "https://photos-chatons.s3.eu-west-3.amazonaws.com/kittens+resize/Bengal/Promo-Facebook-Ad+(Carousel)+(1).jpeg",
-    "https://photos-chatons.s3.eu-west-3.amazonaws.com/kittens+resize/Bengal/Promo-Twitter-Profile+Image+(8).jpeg",
-    "https://photos-chatons.s3.eu-west-3.amazonaws.com/kittens+resize/Munchkin/Promo-edited-image.jpeg",
-    "https://photos-chatons.s3.eu-west-3.amazonaws.com/kittens+resize/Munchkin/Promo-Facebook-Ad+(Carousel)+(1).jpeg",
-    "https://photos-chatons.s3.eu-west-3.amazonaws.com/kittens+resize/Munchkin/Promo-Facebook-Ad+(Carousel).jpeg",
-    "https://photos-chatons.s3.eu-west-3.amazonaws.com/kittens+resize/Munchkin/Promo-Facebook-Ad+(Carousel)2.jpeg",
-		"https://photos-chatons.s3.eu-west-3.amazonaws.com/kittens+resize/Bleu+russe/Promo-Twitter-Profile+Image+(2).jpeg"
+    "https://photos-chatons.s3.eu-west-3.amazonaws.com/kittens+resize/Angora+turk/Promo-Facebook-Ad+(Carousel)+(1).jpeg",
+    "https://photos-chatons.s3.eu-west-3.amazonaws.com/kittens+resize/Angora+turk/Promo-Facebook-Ad+(Carousel).jpeg",
+    "https://photos-chatons.s3.eu-west-3.amazonaws.com/kittens+resize/Bengal/Promo-Facebook-Ad+(Carousel)+(1).jpeg",
+    "https://photos-chatons.s3.eu-west-3.amazonaws.com/kittens+resize/Bengal/Promo-Facebook-Ad+(Carousel)+(3).jpeg",
+    "https://photos-chatons.s3.eu-west-3.amazonaws.com/kittens+resize/Bleu+russe/Promo-Facebook-Ad+(Carousel)+(1).jpeg",
+    "https://photos-chatons.s3.eu-west-3.amazonaws.com/kittens+resize/Bleu+russe/Promo-Facebook-Ad+(Carousel)+(2).jpeg",
+    "https://photos-chatons.s3.eu-west-3.amazonaws.com/kittens+resize/Bleu+russe/Promo-Facebook-Ad+(Carousel)+(3).jpeg",
+    "https://photos-chatons.s3.eu-west-3.amazonaws.com/kittens+resize/Bleu+russe/Promo-Facebook-Ad+(Carousel).jpeg",
+    "https://photos-chatons.s3.eu-west-3.amazonaws.com/kittens+resize/American+curl/Promo-Facebook-Ad+(Carousel)+(2).jpeg",
+    "https://photos-chatons.s3.eu-west-3.amazonaws.com/kittens+resize/Balinais/Promo-Facebook-Ad+(Carousel).jpeg"
+
 ]
 
 
@@ -53,7 +54,7 @@ end
 
 5.times do |i|
     category = Category.create(
-        name: Faker::Creature::Cat.name
+        name: Faker::Nation.nationality
     )
 
 end
@@ -63,7 +64,7 @@ end
 product = Product.create(
     description: Faker::Lorem.paragraph(sentence_count: 8),
     price: rand(1..99),
-    name: Faker::Lorem.sentence,
+    name: Faker::Creature::Cat.name,
     url: pictures_array[i],
     category_id: rand(1..5)
     )
