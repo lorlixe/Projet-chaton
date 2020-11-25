@@ -2,6 +2,8 @@ class ProductCartController < ApplicationController
   before_action :authenticate_user!
   def create
     
+
+    
     @productcart = ProductCart.new(
       product_id: @product.id,
       cart_id: @cart.id,
@@ -17,6 +19,4 @@ class ProductCartController < ApplicationController
       redirect_to user_cart_path(Cart.find_by(user_id: current_user.id))
     end
   end
-
-
 end
