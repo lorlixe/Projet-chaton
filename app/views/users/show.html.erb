@@ -1,0 +1,47 @@
+<head><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"></head>
+
+<style>
+	body, .row {
+   height:100%;
+}
+
+.pad {
+	padding-left: 25px;
+	padding-right: 25px;
+}
+</style>
+
+
+<div class="row">
+  	<div class="col-md-3" style="background-image: url(https://images.pexels.com/photos/755834/pexels-photo-755834.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);"></div>
+  	<div class="col-md-1"></div>
+  	<div class="col-md-5">
+  		<br>
+  		<br>
+  		<br>
+    	<div class="card">
+  			<div class="card-body">
+     			<h1 style="font-weight: bold">Récapitulatif de mes infos persos :</h1>
+     			<hr>
+				<ul style ="list-style: circle; padding-left:25px;">
+  					<li><h5>Mon <b>prénom</b> : <%= @user.first_name %></h5></li>
+  					<br>
+    				<li><h5>Mon <b>nom</b> : <%= @user.last_name %></h5></li>
+    				<br>
+					<li><h5>Mon <b>e-mail</b> : <%= @user.email %></h5></li>
+				</ul>
+				<hr>
+	    		<h5 class="pad">Pour l'instant, j'ai passé <%= @user.orders.all.count %> commande(s) sur le site.</h5>
+	    		<hr>
+	   			<h5 class="pad">Je souhaite modifier mon adresse e-mail ou mon mot de passe ?</h5>
+    			<a href="/users/edit" class="btn btn-primary" style="margin-left: 345px; background-color:#3da676; border-color:#3da676;">C'est par ici !</a>
+  			</div>
+		</div>
+		<br>
+		<br>
+		<br>
+	</div>
+</div>
+
+
+
