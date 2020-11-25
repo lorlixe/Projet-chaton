@@ -17,7 +17,7 @@
 					<div class="col-md-12 p-0">
 						<div class="nav justify-content-center">
 							<ul class="nav-tabs nav-tabs-style-3 text-center px-2 p-md-0 m-0 mb-4">
-								<li class="nav-filter active" data-filter="*">toutes les images</li>
+								<li class="nav-filter active" data-filter="*">Toutes les images</li>
 								<% (@category.count).times do |count| %>
 									<li class="nav-filter" data-filter=".<%= count +1 %>"><%=@category.find(count +1).name %>   </li>
 								<% end %>
@@ -38,9 +38,7 @@
 						<% for product in @product %>
 							<div class="portfolio-card isotope-item <%= product.category_id %> ">
 								<div class="portfolio-card-body">
-									<div class="portfolio-card-header">
-										<img src="assets/images/portfolio/01.jpg" alt="">
-									</div>
+									
 									<div class="portfolio-card-footer">
 
 
