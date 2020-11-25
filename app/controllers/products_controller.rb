@@ -1,12 +1,12 @@
 class ProductsController < ApplicationController
     def index
       @product = Product.all
-      @category = Category
+      @category = Category.all
 
     end
 
     def show
-      @specific_product = Product.find_by_id(params[:id])
+      @product = Product.find_by_id(params[:id])
 
 
     end

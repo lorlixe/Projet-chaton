@@ -1,12 +1,4 @@
 
-<div class="owl-carousel">
-	<div class="item"><img src="https://photos-chatons.s3.eu-west-3.amazonaws.com/kittens+resize/American+curl/Promo-Facebook-Ad+(Carousel)+(1).jpeg" alt=""></div>
-	<div class="item"><img src="https://photos-chatons.s3.eu-west-3.amazonaws.com/kittens+resize/Angora+turk/Promo-Facebook-Ad+(Carousel).jpeg" alt=""></div>
-	<div class="item"><img src="https://photos-chatons.s3.eu-west-3.amazonaws.com/kittens+resize/Angora+turk/Promo-Facebook-Ad+(Carousel)+(1).jpeg" alt=""></div>
-	<div class="item"><img src="https://photos-chatons.s3.eu-west-3.amazonaws.com/kittens+resize/Munchkin/Promo-Facebook-Ad+(Carousel).jpeg" alt=""></div>
-	<div class="item"><img src="https://photos-chatons.s3.eu-west-3.amazonaws.com/kittens+resize/Munchkin/Promo-Facebook-Ad+(Carousel)2.jpeg" alt=""></div>
-</div>
-
 	<section class="p-0">
 		<div class="swiper-container height-100-responsive swiper-arrow-hover swiper-slider-fade">
 			<div class="swiper-wrapper">
@@ -53,20 +45,26 @@
 					<div class="portfolio-wrap grid items-4 items-padding">
 						<!-- portfolio-card -->
 						<% for product in @product %>
-						<div class="portfolio-card isotope-item <%= product.category_id %> ">
-							<div class="portfolio-card-body">
-								<div class="portfolio-card-header">
-									<img src="assets/images/portfolio/01.jpg" alt="">
-								</div>
-								<div class="portfolio-card-footer">
+							<div class="portfolio-card isotope-item <%= product.category_id %> ">
+								<div class="portfolio-card-body">
+									<div class="portfolio-card-header">
+										<img src="assets/images/portfolio/01.jpg" alt="">
+									</div>
+									<div class="portfolio-card-footer">
 
 
-									<img class="card-img" src="<%=product.url %>" alt="Card image cap">
-									<h6 class="info-title"><a href="<%=product_path(product.id)%>" title=""><%=product.name %></a></h6>
-									<h6>Prix <%=product.price %>€ </h6>
-									<h6 class="btn btn-primary" href="#">Ajouter au panier</h6>
+										<img class="card-img" src="<%=product.url %>" alt="Card image cap">
+										<h6 class="info-title"><a href="<%=product_path(product.id)%>" title=""><%=product.name %></a></h6>
+										<h6>Prix <%=product.price %>€ </h6>
+										<h6 class="btn btn-primary" href="#">Ajouter au panier</h6>
 
+									</div>
 								</div>
 							</div>
-						</div>
 						<% end %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
