@@ -1,6 +1,6 @@
 
 class Product < ApplicationRecord
-    belongs_to :category, optional: true
+    belongs_to :category
     has_many :product_carts
     has_many :carts, through: :product_carts
   
@@ -11,10 +11,5 @@ class Product < ApplicationRecord
     validates :url, presence: true
     validates :description, presence: true
     validates :price, presence: true, numericality: { greater_than: 0, less_than: 100 }
-
-  def grab_image(url)
-    downloaded_image = open(url)
-    self.picture.attach(io: downloaded_image, filename: "foo.jpg")
-  end
 
 end
