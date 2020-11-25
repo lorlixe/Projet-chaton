@@ -8,6 +8,17 @@
     </h2>
     <ul>
       <% resource.errors.full_messages.each do |message| %>
+		    <% if message == "Current password can't be blank" %>
+        <% message = "Veuillez indiquer votre mot de passe actuel." %>
+        <% elsif message == "Email can't be blank" %>
+        <% message = "Veuillez indiquer votre adresse e-mail actuelle." %>
+        <% elsif message == "Password confirmation doesn't match Password" %>
+        <% message = "Les champs \"mot de passe\" et \"confirmation de mot de passe\" ne correspondent pas." %>
+        <% elsif message == "Current password is invalid" %>
+        <% message = "Mot de passe invalide" %>
+        <% elsif message == "Password is too short (minimum is 6 characters)" %>
+        <% message = "Votre mot de passe doit contenir au minimum six caractères." %>
+        <% end %>
         <li><%= message %></li>
       <% end %>
     </ul>
