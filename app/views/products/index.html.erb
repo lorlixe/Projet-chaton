@@ -1,4 +1,30 @@
+<section class="p-0 height-700 parallax-bg" style="background-image: url(https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1027&q=80)">
+        <div class="container h-100">
+            <div class="row justify-content-between align-items-center h-100">
+                <div class="col-md-8 mb-7">
+                    <h4 class="text-white">Trouvez les plus belles images du web !</h4>
+                    <h1 class="display-4 font-weight-bold text-white">Bienvenue au royaume des chats</h1>
+                </div>
+            </div>
+        </div>
+    </section>
 
+<section class="portfolio portfolio-style-2 pb-0">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 p-0">
+						<div class="nav justify-content-center">
+							<ul class="nav-tabs nav-tabs-style-3 text-center px-2 p-md-0 m-0 mb-4">
+								<li class="nav-filter active" data-filter="*">Toutes les images</li>
+								<% (@category.count).times do |count| %>
+									<li class="nav-filter" data-filter=".<%= count +1 %>"><%=@category.find(count +1).name %>   </li>
+								<% end %>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 	<section class="portfolio pb-0">
 		<div class="container">
 			<div class="row">
@@ -27,67 +53,7 @@
 		</div>
 	</section>
 
-	<!-- =======================
-	Pricing -->
-	<section class="pricing pricing-center">
-		<div class="container">
-			<div class="row">
-				<div class="col-12 col-lg-8 mx-auto">
-					<div class="title text-center">
-						<h2>Affordable Pricing Packages</h2>
-						<p>We can design and develop a website that specifically meets your unique needs, and meets your required standards as well as industry related standards</p>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<!-- pricing item -->
-				<div class="col-md-4 mb-5">
-					<div class="pricing-box h-100">
-						<h5>Personal Plan</h5>
-						<div class="plan-price">
-							<span class="price text-grad">
-							<sup class="text-grad">$</sup>20 </span> /month
-						</div>
-						<p>Content Management System, Installation & Setup, Search engine friendly and Social media integration</p>
-						<a class="btn btn-outline-light mt-4" href="#!">Order now!</a>
-					</div>
-				</div>
-				<!-- pricing item -->
-				<div class="col-md-4 mb-5">
-					<div class="pricing-box h-100 shadow no-border box">
-						<div class="ribbon"><span>POPULAR</span></div>
-						<h5>Business Plan</h5>
-						<div class="plan-price">
-							<span class="price text-grad">
-							<sup class="text-grad">$</sup>50 </span> /month
-						</div>
-						<p>Search engine friendly, Contact form, Social media integration and Mobile and tablet friendly design</p>
-						<a class="btn btn-grad mt-4" href="#!">Order now!</a>
-					</div>
-				</div>
-				<!-- pricing item -->
-				<div class="col-md-4 mb-5">
-					<div class="pricing-box h-100">
-						<h5>Ultimate Plan</h5>
-						<div class="plan-price">
-							<span class="price text-grad">
-							<sup class="text-grad">$</sup>99 </span> /month
-						</div>
-						<p>Content integration, Slider Design, Social media integration and True 24 X 7 customer support</p>
-						<a class="btn btn-outline-light mt-4" href="#!">Order now!</a>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-12 col-lg-8 mx-auto text-center mt-3">
-					<h6>If you're not exactly sure which pricing strategy will work for your business. Contact us we will help you to choose your best pricing plan. </h6>
-					<a class="btn btn-dark" href="#!">Contact us!</a>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- =======================
-	Pricing -->
+	
 
 
 	
