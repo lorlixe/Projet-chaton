@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-
-
-=======
->>>>>>> develop
 class Product < ApplicationRecord
     belongs_to :category
     has_many :product_carts
@@ -11,11 +6,8 @@ class Product < ApplicationRecord
     has_many :product_orders
     has_many :orders, through: :product_orders
 
-<<<<<<< HEAD
 	
   
-=======
->>>>>>> develop
     validates :name, presence: true
     validates :url, presence: true
     validates :description, presence: true
