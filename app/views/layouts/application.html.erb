@@ -10,18 +10,14 @@
   </head>
 
   <body>
-
-  <header>
     <%= render 'layouts/navbar'%>
     <%= render 'layouts/alerts'%>
-  </header>
-
     
     <%= yield %>
     <%= javascript_include_tag 'application' %>
-  </body>
-  <footer>
+  
     <%= render 'layouts/footer'%>
+  </body>
    
-  </footer>
+  
 </html>
