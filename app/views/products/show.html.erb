@@ -12,9 +12,11 @@
   
     <div class="card-body">
       
-      <a   <%= link_to "Retourner au catalogue", products_path,  :class => "btn btn-primary" %></a>
+      <%= link_to "Retourner au catalogue", products_path,  :class => "btn btn-primary" %>
       <% if user_signed_in? %>
-					<h6 class="btn btn-primary" href="#">Ajouter au panier</h6>
+				<%= link_to "Ajouter au panier !", product_carts_path(product_id: @product.id), method: :post, class: 'btn btn-primary ml-2 mr-0 text-light' %> 										
+			<% else %>
+        <%= link_to "Au panier !", new_user_session_path, class: 'btn btn-primary  ml-2 mr-0 text-light'%>
 			<%end%>
     </div>
   

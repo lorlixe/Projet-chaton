@@ -1,4 +1,4 @@
-class ProductCartController < ApplicationController
+class ProductCartsController < ApplicationController
   before_action :authenticate_user!
 
   def new
@@ -22,6 +22,7 @@ class ProductCartController < ApplicationController
     else 
       flash[:danger] = "Nous n'avons pas pu ajouter ce produit"
       redirect_to root_path
+    end
   end
 
   def destroy
