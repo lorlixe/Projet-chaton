@@ -1,32 +1,21 @@
+<section class="p-0 height-700 parallax-bg" style="background-image: url(https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1027&q=80)">
+        <div class="container h-100">
+            <div class="row justify-content-between align-items-center h-100">
+                <div class="col-md-8 mb-7">
+                    <h4 class="text-white">Trouvez les plus belles images du web !</h4>
+                    <h1 class="display-4 font-weight-bold text-white">Bienvenue au royaume des chats</h1>
+                </div>
+            </div>
+        </div>
+    </section>
 
-	<section class="p-0">
-		<div class="swiper-container height-100-responsive swiper-arrow-hover swiper-slider-fade">
-			<div class="swiper-wrapper">
-				<!-- slide 1-->
-				<div class="swiper-slide bg-overlay-dark-2" ; background-position: center center; background-size: cover;">
-					<div class="container h-50">
-						<div class="row d-flex h-50">
-							<div class="col-lg-8 col-xl-6 mr-auto slider-content justify-content-center align-self-center align-items-start ">
-								<h2 class="animated fadeInUp dealy-100 display-6 display-md-4 display-lg-3 font-weight-bold text-white"> Bienvenue au royaume des chats </h2>
-								<h3 class="animated fadeInUp dealy-300 text-white display-8 display-md-7 alt-font font-italic mb-2 my-md-4">Trouvez ici les plus belles images du web </h3>
-							</div>
-						</div>
-					</div>
-				</div>
-		</div>
-	</section>
-
-
-
-
-
-		<section class="portfolio portfolio-style-2 pb-0">
+<section class="portfolio portfolio-style-2 pb-0">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 p-0">
 						<div class="nav justify-content-center">
 							<ul class="nav-tabs nav-tabs-style-3 text-center px-2 p-md-0 m-0 mb-4">
-								<li class="nav-filter active" data-filter="*">toutes les images</li>
+								<li class="nav-filter active" data-filter="*">Toutes les images</li>
 								<% (@category.count).times do |count| %>
 									<li class="nav-filter" data-filter=".<%= count +1 %>"><%=@category.find(count +1).name %>   </li>
 								<% end %>
@@ -35,9 +24,7 @@
 					</div>
 				</div>
 			</div>
-		</section>
-
-
+</section>
 	<section class="portfolio pb-0">
 		<div class="container">
 			<div class="row">
@@ -47,17 +34,18 @@
 						<% for product in @product %>
 							<div class="portfolio-card isotope-item <%= product.category_id %> ">
 								<div class="portfolio-card-body">
-									<div class="portfolio-card-header">
-										<img src="assets/images/portfolio/01.jpg" alt="">
-									</div>
+									
 									<div class="portfolio-card-footer">
 
 
 										<img class="card-img" src="<%=product.url %>" alt="Card image cap">
 										<h6 class="info-title"><a href="<%=product_path(product.id)%>" title=""><%=product.name %></a></h6>
 										<h6>Prix <%=product.price %>€ </h6>
-										<h6 class="btn btn-primary" href="#">Ajouter au panier</h6>
-
+										<% if user_signed_in? %>
+											<%= link_to "Ajouter au panier !", product_carts_path(product_id: product.id), method: :post, class: 'btn btn-primary mr-0 text-light' %> 										
+										<% else %>
+                							<%= link_to "Au panier !", new_user_session_path, class: 'btn btn-primary  mr-0 text-light'%>
+										<%end%>
 									</div>
 								</div>
 							</div>
@@ -68,3 +56,7 @@
 		</div>
 	</section>
 
+	
+
+
+	
