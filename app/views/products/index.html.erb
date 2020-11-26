@@ -24,7 +24,7 @@
 					</div>
 				</div>
 			</div>
-		</section>
+</section>
 	<section class="portfolio pb-0">
 		<div class="container">
 			<div class="row">
@@ -41,8 +41,11 @@
 										<img class="card-img" src="<%=product.url %>" alt="Card image cap">
 										<h6 class="info-title"><a href="<%=product_path(product.id)%>" title=""><%=product.name %></a></h6>
 										<h6>Prix <%=product.price %>€ </h6>
-										<h6 class="btn btn-primary" href="#">Ajouter au panier</h6>
-
+										<% if user_signed_in? %>
+											<%= link_to "Ajouter au panier !", product_carts_path(product_id: product.id), method: :post, class: 'btn btn-primary mr-0 text-light' %> 										
+										<% else %>
+                							<%= link_to "Au panier !", new_user_session_path, class: 'btn btn-primary  mr-0 text-light'%>
+										<%end%>
 									</div>
 								</div>
 							</div>
