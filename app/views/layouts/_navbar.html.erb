@@ -21,24 +21,27 @@
             </div>
           </li>
           <%else %>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Mon Compte
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              
-              <%= link_to "Se connecter", new_user_session_path, :class => "dropdown-item" %>
-              <%= link_to "Nouveau client?",  new_user_registration_path, :class => "dropdown-item"%>
-            </div>
-          </li>
-        <%end%>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Mon Compte
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                <%= link_to "Se connecter", new_user_session_path, :class => "dropdown-item" %>
+                <%= link_to "Nouveau client?",  new_user_registration_path, :class => "dropdown-item"%>
+              </div>
+            </li>
+          <%end%>
         </ul>
       </div>
       <div class="d-flex justify-content-end">
         <ul class="navbar-nav mr-auto" >
-          
+          <% if user_signed_in?%>
           <li class="nav-item p-2">
-            
+            <%#= link_to "Mon Panier", cart_path, :class => "nav-link" %>
+          </li>
+          <% end %>
+          <li class="nav-item p-2">
             <%= link_to "A Propos", contact_index_path, :class => "nav-link" %>
           </li>
         </ul>
