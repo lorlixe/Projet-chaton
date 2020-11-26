@@ -1,0 +1,25 @@
+<h1>Bienvenue sur l'interface de gestion des produits</h1>
+<br>
+<h3>Les produits actuellement disponibles en BDD sont :</h3>
+<br>
+
+<% Product.all.each do |product| %>
+
+<div class="card" style="width: 25rem;">
+  <div class="card-body">
+    <p class="card-text">Product_id : <%= product.id %></p>
+    <p class="card-text">Nom du produit : <%= product.name %>
+    <p>Description : <%= product.description %></p>
+	<p>Prix : <%= product.price %> euros</p>
+	<p>Lien de l'image de présentation : <%= link_to product.url, product.url %></p>
+  <p>Numéro de catégorie : <%= product.category_id %></p>
+	<p>Ce produit a été commandé <%= product.orders.count %> fois.</p>
+
+    <%= link_to "Modifier/supprimer cet produit", edit_admin_product_path(product.id) %>
+  </div>
+</div>
+
+<br>
+<br>
+
+<% end %>

@@ -1,0 +1,31 @@
+<h1>Page de modification/suppression du produit <%=@product.id%></h1>
+<br>
+<br>
+
+<h4>Vous pouvez modifier un ou plusieurs champs :</h4>
+<br>
+
+<%= form_for ([:admin, @product]), url: admin_product_path(@product.id), :method => :patch do |f| %>
+  Nom: <%= f.text_field :name %><br />
+  Description : <%= f.text_field :description %><br />
+  Prix : <%= f.text_field :price %><br />
+  Lien vers l'image du produit : <%= f.text_field :url %><br />
+  Numéro de catégorie : <%= f.text_field :category_id %><br />
+
+  <%= f.submit 'Valider' %>
+<% end %>
+
+<br>
+<br>
+
+<div class="card" style="width: 25rem;">
+  <div class="card-body">
+<h3>Attention, il sera impossible de revenir en arrière :</h3>
+<br>
+
+<h5><%= link_to "Supprimer", admin_product_path(@product.id), method: :delete %> ce produit de la base de données.</h5>
+  </div>
+</div>
+<br>
+<br>
+<p><%= link_to "Revenir", admin_products_path %> à l'index des produits.</p>

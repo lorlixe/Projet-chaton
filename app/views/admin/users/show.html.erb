@@ -1,0 +1,11 @@
+<h1>Page de modification/suppression de l'utilisateur <%=@user.id%></h1>
+<br>
+<h3>Données persos :</h3>
+
+<%= form_for ([:admin, @user]), url: admin_user_path(@user.id), :method => :patch do |f| %>
+  Prénom: <%= f.text_field :first_name %><br />
+  Nom : <%= f.text_field :last_name %><br />
+  Adresse e-mail : <%= f.text_field :email %><br />
+  Admin?    : <%= f.check_box :is_admin %><br />
+  <%= f.submit %>
+<% end %>

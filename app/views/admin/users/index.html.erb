@@ -1,0 +1,23 @@
+<h1>Bienvenue sur l'interface de gestion des utilisateurs</h1>
+<br>
+<h3>Les utilisateurs actuellement enregistrés en BDD sont :</h3>
+<br>
+
+<% User.all.each do |user| %>
+
+<div class="card" style="width: 25rem;">
+  <div class="card-body">
+    <p class="card-text">User_id : <%= user.id %></p>
+    <p class="card-text">Nom complet : <%= user.first_name %> <%= user.last_name %></p>
+    <p>Adresse e-mail : <%= user.email %></p>
+	<p>Nombre de commandes réalisées : <%= user.orders.all.count %></p>
+	<p>Cet utilisateur est admin : <%= user.is_admin? %></p>
+
+    <%= link_to "Modifier/supprimer cet utilisateur", edit_admin_user_path(user.id) %>
+  </div>
+</div>
+
+<br>
+<br>
+
+<% end %>
