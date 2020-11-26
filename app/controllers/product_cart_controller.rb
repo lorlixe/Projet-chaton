@@ -2,15 +2,26 @@ class ProductCartController < ApplicationController
   before_action :authenticate_user!
 
   def new
-  
+    @product = Product.find(params[:id])
   end
 
   def create
-    
-  end
+    @cart = Cart.where(user_id: current_user.id).last
+    @product = Product.find(params[:product_id])
 
-  def show
-    @productcart = ProductCart.all
+    @productcart = ProductCart.new(
+      product_id: @product.id,
+      cart_id: @cart.id,
+      total_price: @product.price,
+      quantity: 1
+    )
+    if @productcart.save
+      flash[:success] = "Merci ! "
+      redirect_to :controller => 'products', :action => 'index'
+     
+    else 
+      flash[:danger] = "Nous n'avons pas pu ajouter ce produit"
+      redirect_to root_path
   end
 
   def destroy
@@ -20,4 +31,5 @@ class ProductCartController < ApplicationController
       redirect_to user_cart_path(Cart.find_by(user_id: current_user.id))
     end
   end
+
 end

@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   devise_for :users
 	resources :contact, only: [:index]
   resources :products
+  resources :users, only: [:show]
+
   
-  resources :product_cart_, only: [:create, :update, :destroy]
-  resources :carts, except: [:index, :new, :edit]
+  resources :product_carts, only: [:new, :create, :destroy]
+  resources :carts
 end

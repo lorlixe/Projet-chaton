@@ -1,4 +1,9 @@
 class ApplicationController < ActionController::Base
-    include ApplicationHelper
-    after_action :create_cart_for_a_current_user, only: [:create]
+    def after_sign_in_path_for(resource_or_scope)
+        session[:user_id] = current_user.id
+        @cart = Cart.new(user_id: current_user.id)
+        if @cart.save
+          root_path
+        end
+    end
 end

@@ -18,6 +18,9 @@ Category.reset_pk_sequence
 Product.destroy_all
 Product.reset_pk_sequence
 
+Cart.destroy_all
+Cart.reset_pk_sequence
+
 
 pictures_array = ["https://photos-chatons.s3.eu-west-3.amazonaws.com/kittens+resize/American+curl/Promo-Facebook-Ad+(Carousel)+(1).jpeg",
     "https://photos-chatons.s3.eu-west-3.amazonaws.com/kittens+resize/American+curl/Promo-Facebook-Ad+(Carousel)+(3).jpeg",
