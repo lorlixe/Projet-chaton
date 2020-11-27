@@ -23,8 +23,32 @@
                     <%= link_to "voir plus", product_path(e.product.id), class: 'btn btn-outline-warning btn-sm ml-2 mr-0 text-warning'%>
                 </div>
             <%end%>
-                
-            <div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded"><button class="btn btn-primary btn-block btn-lg ml-2 pay-button" type="button">Paiement</button></div>
+           <% if @total_price > 0 %>
+                <%= form_tag user_cart_charges_path(cart_id: params[:id]) do %>
+                    <article>
+                        <% if flash[:error].present? %>
+                        <div id="error_explanation">
+                            <p><%= flash[:error] %></p>
+                        </div>
+                        <% end %>
+                        <label class="amount">
+                        <span>Montant: <%= @total_price %> €</span>
+                        </label>
+                    </article>
+
+                    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                            data-description="A month's subscription"
+                            data-amount=<%= @total_price * 100%>
+                            data-locale="auto"></script>
+                <% end %>
+            <% end %>
+
+
+
+
+
+
         </div>
     </div>
 </div>
