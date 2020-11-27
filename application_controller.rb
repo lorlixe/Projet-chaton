@@ -1,15 +1,6 @@
-<<<<<<< HEAD
-module Admin
 
 class ApplicationController < ::ApplicationController
 	before_action :only_admin
-=======
-
-module Admin
-
-class ApplicationController < ::ApplicationController
-	before_filter :only_admin
->>>>>>> develop
 
 	private
 
@@ -23,4 +14,3 @@ class ApplicationController < ::ApplicationController
 
 end
 
-end
