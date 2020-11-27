@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  get 'orders/index'
   root 'products#index'
   
   devise_for :users

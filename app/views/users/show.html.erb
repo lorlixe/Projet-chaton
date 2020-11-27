@@ -1,19 +1,7 @@
 
 
-<style>
-	body, .row {
-   height:100%;
-}
-
-.pad {
-	padding-left: 25px;
-	padding-right: 25px;
-}
-</style>
-
-
 <div class="row">
-  	<div class="col-md-4" style="background-image: url(https://images.pexels.com/photos/2817406/pexels-photo-2817406.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);"></div>
+  	<div class="col-md-3" style="background-image: url(https://images.unsplash.com/photo-1566458226966-5d1efe19e4b7?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8OHx8a2l0dGVufGVufDB8fDB8&auto=format&fit=crop&w=500&q=60"></div>
   	<div class="col-md-1"></div>
   	<div class="col-md-5">
   		<br>
@@ -21,22 +9,30 @@
   		<br>
     	<div class="card">
   			<div class="card-body">
-     			<h1 style="font-weight: bold">Récapitulatif de mes infos persos :</h1>
-     			<hr>
-				<ul style ="list-style: circle; padding-left:25px;">
-  					<li><h5>Mon <b>prénom</b> : <%= @user.first_name %></h5></li>
+     			<h1 class="font-weight-bold">Récapitulatif de mes infos personnels :</h1>
+     			
+				<ul class="list-group">
+  					<li class="list-group-item"><p>Prénom</b> : <%= @user.first_name %></p></li>
   					<br>
-    				<li><h5>Mon <b>nom</b> : <%= @user.last_name %></h5></li>
+    				<li class="list-group-item"><p>Nom</b> : <%= @user.last_name %></p></li>
     				<br>
-					<li><h5>Mon <b>e-mail</b> : <%= @user.email %></h5></li>
+					<li class="list-group-item"><p>E-mail</b> : <%= @user.email %></p></li>
 				</ul>
 				<hr>
-	    		<h5 class="pad">Pour l'instant, j'ai passé <%= @user.orders.all.count %> commande(s) sur le site.</h5>
+	    		<p>Pour l'instant, j'ai passé <%= @user.orders.all.count %> commande(s) sur le site.</p>
 	    		<hr>
-	   			<h5 class="pad">Je souhaite modifier mon adresse e-mail ou mon mot de passe ?</h5>
-    			<a href="/users/edit" class="btn btn-primary" style="margin-left: 345px; background-color:#3da676; border-color:#3da676;">C'est par ici !</a>
+					<div>
+					<p>Je souhaite modifier mon adresse e-mail ou mon mot de passe ?</p>
+	   			<a href="/users/edit" class="btn btn-primary" >C'est par ici !</a>
+					</div>
+						<div>
+					<p>Voir mes commandes ?</p>
+					<%= link_to "Voir mes commandes", orders_index_path, class: "btn btn-primary"%>
+	   			
+					</div>
   			</div>
 		</div>
+
 		<br>
 		<br>
 		<br>
