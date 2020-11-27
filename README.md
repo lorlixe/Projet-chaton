@@ -1,24 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This is ChatonTHP2020, our e-shopping website where you can purchase kitten pictures for a price ranging between 1 and 99 euros.
+Our website was built in rougly 10 days with Ruby on Rails. We built several views to show you the kitten (all together and separately),
+to make it as easy as possible for to pay with Stripe and to register and update your personal information with Devise.
+Hope you enjoy it!
