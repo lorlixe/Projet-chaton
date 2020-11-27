@@ -1,3 +1,4 @@
+module Admin
 
 class ApplicationController < ::ApplicationController
 	before_action :only_admin
@@ -11,6 +12,7 @@ class ApplicationController < ::ApplicationController
     		end
   		end
 
+end
 
 end
 
