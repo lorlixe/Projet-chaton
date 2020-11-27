@@ -26,8 +26,7 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
-# Ignore Key Sendgrid
+
 .env
 
-# Ignore Key stripe
-/config/nitializers/stripe.rb
+
