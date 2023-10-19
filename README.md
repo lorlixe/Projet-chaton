@@ -5,4 +5,5 @@ Our website was built in rougly 10 days with Ruby on Rails. We built several vie
 to make it as easy as possible for to pay with Stripe and to register and update your personal information with Devise.
 Hope you enjoy it!
 
+New:
 https://chaton-thp2020pro.herokuapp.com/
